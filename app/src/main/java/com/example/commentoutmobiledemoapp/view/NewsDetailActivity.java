@@ -31,6 +31,7 @@ public class NewsDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_detail);
 
+        //get selected news from intent
         news = (NewsModel) getIntent().getSerializableExtra("news");
 
         newsImage = findViewById(R.id.imageNews);
