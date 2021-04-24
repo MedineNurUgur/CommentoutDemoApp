@@ -20,6 +20,7 @@ import com.squareup.picasso.Picasso;
 public class NewsDetailActivity extends AppCompatActivity {
     private ImageView newsImage;
     private TextView newsTitle;
+    private TextView newsSummary;
     private WebView content;
     private Button btnShare;
 
@@ -34,11 +35,13 @@ public class NewsDetailActivity extends AppCompatActivity {
 
         newsImage = findViewById(R.id.imageNews);
         newsTitle = findViewById(R.id.textNewsTitle);
+        newsSummary = findViewById(R.id.textViewSummary);
         content = findViewById(R.id.content);
         btnShare = findViewById(R.id.btnShare);
 
         loadImage(news.getMain_image());
         newsTitle.setText(news.getTitle());
+        newsSummary.setText(news.getSummary());
         content.loadDataWithBaseURL(null, news.getContent(), "text/html", "utf-8", null);
 
         btnShare.setOnClickListener(new View.OnClickListener() {
